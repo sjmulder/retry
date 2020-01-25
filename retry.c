@@ -23,7 +23,7 @@ main(int argc, char **argv)
 	}
 
 	if (count < 0) errx(1, "invalid -c");
-	if (delay < 1) errx(1, "invalid -w");
+	if (delay < 0) errx(1, "invalid -w");
 
 	argc -= optind; argv += optind;
 	if (!argc) { fputs(usage, stderr); return 1; }
@@ -34,7 +34,7 @@ main(int argc, char **argv)
 		    argv[0]); }
 		if (wait(&st) == -1) err(1, "wait");
 		if (st == 0) return 0;
-		sleep(delay);
+		if (delay) sleep(delay);
 	}
 
 	return 2;
