@@ -1,0 +1,27 @@
+.Dd January 25, 2020
+.Dt RETRY 1
+.Os
+.Sh NAME
+.Nm retry
+.Nd persistently try to run a command
+.Sh SYNOPSIS
+.Nm
+.Op Fl w Ar delay
+.Op Fl c Ar count
+.Ar command
+.Ar ...
+.Sh DESCRIPTION
+Invokes the given
+.Ar command
+until it succeeeds (or at most
+.Ar count
+times if given), waiting
+.Ar delay
+seconds between invocations (1 by default).
+.Sh EXIT STATUS
+0 if succesful, 1 if an error occurs, 2 if
+.Ar count
+is exceeded.
+.Sh AUTHORS
+.An Sijmen J. Mulder
+.Aq Mt ik@sjmulder.nl
