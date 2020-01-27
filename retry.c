@@ -14,7 +14,7 @@ main(int argc, char **argv)
 	int c, i, st, delay=1, count=0;
 	pid_t pid;
 
-	while ((c = getopt(argc, argv, "c:w:")) != -1) {
+	while ((c = getopt(argc, argv, "+c:w:")) != -1) {
 		switch (c) {
 		case 'c': count = strtol(optarg, NULL, 10); break;
 		case 'w': delay = strtol(optarg, NULL, 10); break;
