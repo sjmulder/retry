@@ -30,7 +30,7 @@ main(int argc, char **argv)
 
 	for (i = 0; !count || i < count; i++) {
 		if ((pid = fork()) == -1) err(1, "fork");
-		if (!pid) { execvp(argv[0], &argv[0]); err(1, "%s",
+		if (!pid) { execvp(argv[0], argv); err(1, "%s",
 		    argv[0]); }
 		if (wait(&st) == -1) err(1, "wait");
 		if (st == 0) return 0;
