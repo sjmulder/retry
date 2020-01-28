@@ -1,6 +1,6 @@
 DESTDIR   ?=
 PREFIX    ?= /usr/local
-MANPREFIX ?= $(PREFIX)/usr/share/man
+MANPREFIX ?= $(PREFIX)/man
 
 CFLAGS += -Wall -Wextra
 
